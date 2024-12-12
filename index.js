@@ -8,3 +8,12 @@ let previousInput = null;
 function updateDisplay() {
   display.textContent = currentInput;
 }
+
+function handleNumber(number) {
+  if (currentInput === "0") {
+    currentInput = number;
+  } else {
+    currentInput += number;
+  }
+  updateDisplay();
+}
