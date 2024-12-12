@@ -54,3 +54,24 @@ function clearDisplay() {
   operator = null;
   updateDisplay();
 }
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const value = button.textContent;
+
+    if (button.classList.contains("number")) {
+      handleNumber(value);
+    } else if (button.classList.contains("operator")) {
+      handleOperator(value);
+    } else if (button.id === "equals") {
+      if (operator) {
+        currentInput = calculate();
+        previousInput = null;
+        operator = null;
+        updateDisplay();
+      }
+    } else if (button.id === "clear") {
+      clearDisplay();
+    }
+  });
+});
