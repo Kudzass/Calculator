@@ -75,3 +75,5 @@ buttons.forEach((button) => {
     }
   });
 });
+
+updateDisplay();
