@@ -47,3 +47,10 @@ function calculate() {
 
   return result.toString();
 }
+
+function clearDisplay() {
+  currentInput = "0";
+  previousInput = null;
+  operator = null;
+  updateDisplay();
+}
