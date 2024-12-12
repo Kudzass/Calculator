@@ -27,3 +27,23 @@ function handleOperator(op) {
   operator = op;
   currentInput = "0";
 }
+
+function calculate() {
+  const prev = parseFloat(previousInput);
+  const curr = parseFloat(currentInput);
+  if (isNaN(prev) || isNaN(curr)) return "0";
+
+  let result;
+  switch (operator) {
+    case "+":
+      result = prev + curr;
+      break;
+    case "÷":
+      result = curr !== 0 ? prev / curr : "Error";
+      break;
+    default:
+      result = curr;
+  }
+
+  return result.toString();
+}
