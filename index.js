@@ -17,3 +17,13 @@ function handleNumber(number) {
   }
   updateDisplay();
 }
+
+function handleOperator(op) {
+  if (previousInput === null) {
+    previousInput = currentInput;
+  } else if (operator) {
+    previousInput = calculate();
+  }
+  operator = op;
+  currentInput = "0";
+}
